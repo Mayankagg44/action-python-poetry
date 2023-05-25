@@ -19,13 +19,13 @@
     ],
     "packageRules": [
       {
-        "packageNames": ["poetry","dockerfile"],
         "groupName": "baseconfig-packages",
         "lockFileMaintenance": {
           "enabled": true
         }
       }
     ],
+    "enabledManagers": ["poetry","dockerfile","github-actions"],
     "poetry": {
       "fileMatch": ["(^|/)pyproject\\.toml$"]
     },
@@ -53,6 +53,7 @@
         "groupName": "2nd repo package"
       }
     ],
+    "enabledManagers": ["poetry","dockerfile","github-actions"],
     "poetry": {
       "fileMatch": ["(^|/)pyproject\\.toml$"]
     }
