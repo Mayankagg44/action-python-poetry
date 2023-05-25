@@ -2,5 +2,23 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
-  ]
+  ],
+  "labels": ["dependencies", "renovate"],
+  "packageRules": [
+    {
+      "packageNames": ["*"],
+      "lockFileMaintenance": {
+        "enabled": true
+      }
+    }
+  ],
+  "enabledManagers": ["poetry","dockerfile","github-actions"],
+  "poetry": {
+    "fileMatch": [
+      "(^|/)pyproject\\.toml$"
+    ]
+  },
+  "commitMessagePrefix": "fix:",
+  "commitMessageTopic": "dependencies",
+  "schedule": ["on the first day of the month"]
 }
