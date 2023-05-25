@@ -7,7 +7,6 @@
       "matchHost": "github.com",
       "regexManagers": [
         {
-          "fileMatch": ["(^|/)pyproject\\.toml$"],
           "datasourceTemplate": "Mayankagg44/action-python-poetry"
         }
       ]
@@ -27,6 +26,9 @@
         }
       }
     ],
+    "poetry": {
+      "fileMatch": ["(^|/)pyproject\\.toml$"]
+    },
     "commitMessagePrefix": "fix:",
     "commitMessageTopic": "dependencies",
     "schedule": ["on the first day of the month"]
@@ -38,7 +40,6 @@
         "matchHost": "github.com",
         "regexManagers": [
           {
-            "fileMatch": ["(^|/)pyproject\\.toml$"],
             "datasourceTemplate": "Mayankagg44/sync_with_poetry"
           }
         ],
