@@ -1,10 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "labels": ["renovate"],
+  "regexManagers": [
+    {
+      "fileMatch": ["(^|/)pyproject\\.toml$"],
+      "datasourceTemplate": "Mayankagg44/action-python-poetry"
+    }
+  ],
   "repositories": [
   {
     "matchDatasource": "github",
-    "datasourceTemplate": "Mayankagg44/action-python-poetry",
     "extends": [
       "config:base"
     ],
@@ -17,9 +22,6 @@
         }
       }
       ],
-    "poetry": {
-      "fileMatch": ["(^|/)pyproject\\.toml$"]
-    },
     "commitMessagePrefix": "fix:",
     "commitMessageTopic": "dependencies",
     "schedule": ["on the first day of the month"]
