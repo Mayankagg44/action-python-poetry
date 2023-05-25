@@ -52,7 +52,10 @@
         "packageNames": ["terraform"],
         "groupName": "2nd repo package"
       }
-    ]
+    ],
+    "poetry": {
+      "fileMatch": ["(^|/)pyproject\\.toml$"]
+    }
     }
   ]
   }
