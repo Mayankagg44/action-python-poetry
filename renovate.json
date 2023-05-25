@@ -21,24 +21,29 @@
           "enabled": true
         }
       }
-      ],
+    ],
     "commitMessagePrefix": "fix:",
     "commitMessageTopic": "dependencies",
     "schedule": ["on the first day of the month"]
     },
-    {
-      "matchDatasource": "github",
-      "datasourceTemplate": "Mayankagg44/sync_with_poetry",
-      "extends": [
-        "config:base",
-        "config:python"
-      ],
-      "packageRules": [
-        {
-          "packageNames": ["terraform"],
-          "groupName": "2nd repo package"
-        }
-      ]
-    }
+  {
+    "matchDatasource": "github",
+    "regexManagers": [
+      {
+        "fileMatch": ["(^|/)pyproject\\.toml$"],
+        "datasourceTemplate": "Mayankagg44/sync_with_poetry"
+      }
+    ],
+    "extends": [
+      "config:base",
+      "config:python"
+    ],
+    "packageRules": [
+      {
+        "packageNames": ["terraform"],
+        "groupName": "2nd repo package"
+      }
+    ]
+  }
   ]
 }
