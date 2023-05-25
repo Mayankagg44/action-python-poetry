@@ -1,16 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "labels": ["renovate"],
-  "regexManagers": [
+  "hostRules": [
     {
-      "fileMatch": ["(^|/)pyproject\\.toml$"],
+      "hostType": "github",
       "matchHost": "github.com",
-      "datasourceTemplate": "Mayankagg44/action-python-poetry"
+      "regexManagers": [
+        {
+          "fileMatch": ["(^|/)pyproject\\.toml$"],
+          "datasourceTemplate": "Mayankagg44/action-python-poetry"
+        }
+      ]
     }
   ],
   "repositories": [
   {
-    "matchDatasource": "github",
     "extends": [
       "config:base"
     ],
@@ -28,13 +32,16 @@
     "schedule": ["on the first day of the month"]
     },
   {
-    "regexManagers": [
+    "hostRules": [
       {
-        "fileMatch": ["(^|/)pyproject\\.toml$"],
+        "hostType": "github",
         "matchHost": "github.com",
-        "datasourceTemplate": "Mayankagg44/sync_with_poetry"
-      }
-    ],
+        "regexManagers": [
+          {
+            "fileMatch": ["(^|/)pyproject\\.toml$"],
+            "datasourceTemplate": "Mayankagg44/sync_with_poetry"
+          }
+        ],
     "extends": [
       "config:base",
       "config:python"
@@ -45,6 +52,8 @@
         "groupName": "2nd repo package"
       }
     ]
+    }
+  ]
   }
   ]
 }
