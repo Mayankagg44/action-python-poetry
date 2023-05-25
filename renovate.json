@@ -30,7 +30,6 @@
     "matchDatasource": "github",
     "regexManagers": [
       {
-        "fileMatch": ["(^|/)pyproject\\.toml$"],
         "datasourceTemplate": "Mayankagg44/sync_with_poetry"
       }
     ],
