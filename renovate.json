@@ -4,6 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["(^|/)pyproject\\.toml$"],
+      "matchHost": "github.com",
       "datasourceTemplate": "Mayankagg44/action-python-poetry"
     }
   ],
@@ -27,9 +28,10 @@
     "schedule": ["on the first day of the month"]
     },
   {
-    "matchDatasource": "github",
     "regexManagers": [
       {
+        "fileMatch": ["(^|/)pyproject\\.toml$"],
+        "matchHost": "github.com",
         "datasourceTemplate": "Mayankagg44/sync_with_poetry"
       }
     ],
