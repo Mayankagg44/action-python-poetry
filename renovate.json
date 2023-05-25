@@ -17,7 +17,6 @@
         }
       }
       ],
-    "enabledManagers": ["poetry"],
     "poetry": {
       "fileMatch": ["(^|/)pyproject\\.toml$"]
     },
