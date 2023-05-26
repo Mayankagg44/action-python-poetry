@@ -1,16 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "labels": ["renovate"],
-  "hostRules": [
-    {
-      "hostType": "github",
-      "matchHost": "github.com"
-    }
+  "extends": [
+    "github>Mayankagg44/action-python-poetry"
   ],
+  "labels": ["dependencies", "renovate"],
+  
   "repositories": [
     {
+      "platform": "github",
+      "repository": "Mayankagg44/sync_with_poetry",
       "extends": [
-        "config:base"
+        "github>Mayankagg44/action-python-poetry"
       ],
       "packageRules": [
         {
@@ -20,41 +20,15 @@
           }
         }
       ],
-      "regexManagers": [
-        {
-          "datasourceTemplate": "Mayankagg44/action-python-poetry",
-          "fileMatch": ["(^|/)pyproject\\.toml$"]
-        }
-      ],
-    "enabledManagers": ["poetry","github-actions"],
-    "commitMessagePrefix": "fix:",
-    "commitMessageTopic": "dependencies",
-    "schedule": ["on the first day of the month"]
-    },
-  {
-    "hostRules": [
-      {
-        "hostType": "github",
-        "matchHost": "github.com"
-      }
-    ],
-    "extends": [
-      "config:base",
-      "config:python"
-    ],
-    "regexManagers": [
-      {
-        "datasourceTemplate": "Mayankagg44/sync_with_poetry",
-        "fileMatch": ["(^|/)pyproject\\.toml$"]
-      }
-    ],
-    "packageRules": [
-      {
-        "packageNames": ["terraform"],
-        "groupName": "2nd repo package"
-      }
-    ],
-    "enabledManagers": ["poetry"]
+      "enabledManagers": ["poetry","dockerfile","github-actions"],
+      "poetry": {
+        "fileMatch": [
+          "(^|/)pyproject\\.toml$"
+        ]
+      },
+      "commitMessagePrefix": "fix:",
+      "commitMessageTopic": "dependencies",
+      "schedule": ["on the first day of the month"]
     }
   ]
 }
