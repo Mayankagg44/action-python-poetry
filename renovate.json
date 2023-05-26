@@ -4,28 +4,28 @@
   "hostRules": [
     {
       "hostType": "github",
-      "matchHost": "github.com",
+      "matchHost": "github.com"
+    }
+  ],
+  "repositories": [
+    {
+      "extends": [
+        "config:base"
+      ],
+      "packageRules": [
+        {
+          "groupName": "baseconfig-packages",
+          "lockFileMaintenance": {
+            "enabled": true
+          }
+        }
+      ],
       "regexManagers": [
         {
           "datasourceTemplate": "Mayankagg44/action-python-poetry",
           "fileMatch": ["(^|/)pyproject\\.toml$"]
         }
-      ]
-    }
-  ],
-  "repositories": [
-  {
-    "extends": [
-      "config:base"
-    ],
-    "packageRules": [
-      {
-        "groupName": "baseconfig-packages",
-        "lockFileMaintenance": {
-          "enabled": true
-        }
-      }
-    ],
+      ],
     "enabledManagers": ["poetry","github-actions"],
     "commitMessagePrefix": "fix:",
     "commitMessageTopic": "dependencies",
@@ -35,16 +35,18 @@
     "hostRules": [
       {
         "hostType": "github",
-        "matchHost": "github.com",
-        "regexManagers": [
-          {
-            "datasourceTemplate": "Mayankagg44/sync_with_poetry",
-            "fileMatch": ["(^|/)pyproject\\.toml$"]
-          }
-        ],
+        "matchHost": "github.com"
+      }
+    ],
     "extends": [
       "config:base",
       "config:python"
+    ],
+    "regexManagers": [
+      {
+        "datasourceTemplate": "Mayankagg44/sync_with_poetry",
+        "fileMatch": ["(^|/)pyproject\\.toml$"]
+      }
     ],
     "packageRules": [
       {
@@ -54,7 +56,5 @@
     ],
     "enabledManagers": ["poetry"]
     }
-  ]
-  }
   ]
 }
