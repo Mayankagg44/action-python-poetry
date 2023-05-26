@@ -15,7 +15,7 @@
       "packageRules": [
         {
           "groupName": "baseconfig-packages",
-          "matchFiles": "pyproject.toml",
+          "matchFiles": ["pyproject.toml"],
           "lockFileMaintenance": {
             "enabled": true
           }
