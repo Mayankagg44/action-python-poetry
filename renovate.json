@@ -15,17 +15,13 @@
       "packageRules": [
         {
           "groupName": "baseconfig-packages",
+          "matchFiles": "pyproject.toml",
           "lockFileMaintenance": {
             "enabled": true
           }
         }
       ],
       "enabledManagers": ["poetry","dockerfile","github-actions"],
-      "poetry": {
-        "fileMatch": [
-          "(^|/)pyproject\\.toml$"
-        ]
-      },
       "commitMessagePrefix": "fix:",
       "commitMessageTopic": "dependencies",
       "schedule": ["on the first day of the month"]
