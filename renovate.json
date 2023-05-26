@@ -7,7 +7,8 @@
       "matchHost": "github.com",
       "regexManagers": [
         {
-          "datasourceTemplate": "Mayankagg44/action-python-poetry"
+          "datasourceTemplate": "Mayankagg44/action-python-poetry",
+          "fileMatch": ["(^|/)pyproject\\.toml$"]
         }
       ]
     }
@@ -25,10 +26,7 @@
         }
       }
     ],
-    "enabledManagers": ["poetry","dockerfile","github-actions"],
-    "poetry": {
-      "fileMatch": ["(^|/)pyproject\\.toml$"]
-    },
+    "enabledManagers": ["poetry","github-actions"],
     "commitMessagePrefix": "fix:",
     "commitMessageTopic": "dependencies",
     "schedule": ["on the first day of the month"]
@@ -40,7 +38,8 @@
         "matchHost": "github.com",
         "regexManagers": [
           {
-            "datasourceTemplate": "Mayankagg44/sync_with_poetry"
+            "datasourceTemplate": "Mayankagg44/sync_with_poetry",
+            "fileMatch": ["(^|/)pyproject\\.toml$"]
           }
         ],
     "extends": [
@@ -53,10 +52,7 @@
         "groupName": "2nd repo package"
       }
     ],
-    "enabledManagers": ["poetry","dockerfile","github-actions"],
-    "poetry": {
-      "fileMatch": ["(^|/)pyproject\\.toml$"]
-    }
+    "enabledManagers": ["poetry"]
     }
   ]
   }
