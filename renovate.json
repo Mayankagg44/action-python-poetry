@@ -12,6 +12,7 @@
       "extends": [
         "github>Mayankagg44/action-python-poetry"
       ],
+      "labels": ["Dependencies", "Renovate"],
       "packageRules": [
         {
           "groupName": "baseconfig-packages",
