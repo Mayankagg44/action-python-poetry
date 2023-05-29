@@ -12,7 +12,6 @@
       "extends": [
         "github>Mayankagg44/action-python-poetry"
       ],
-      "labels": ["Dependencies", "Renovate"],
       "enabledManagers": ["poetry"],
       "packageRules": [
         {
@@ -20,12 +19,13 @@
           "matchFiles": ["pyproject.toml"],
           "lockFileMaintenance": {
             "enabled": true
-          }
+          },
+          "commitMessageTopic": "dependencies",
+          "commitMessagePrefix": "fix:",
+          "labels": ["Dependencies", "Renovate"]
         }
       ],
-      "enabledManagers": ["poetry","dockerfile","github-actions"],
-      "commitMessagePrefix": "fix:",
-      "commitMessageTopic": "dependencies",
+      "enabledManagers": ["poetry","dockerfile","github-actions"],      
       "schedule": ["on the first day of the month"]
     }
   ]
