@@ -6,7 +6,7 @@ jobs:
   action-python-poetry:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # Test against the repo's copy of the action
         with:
           helloName: k2bd
