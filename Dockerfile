@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.14
 
 ENV PYTHONFAULTHANDLER=1 \
     PYTHONHASHSEED=random \
